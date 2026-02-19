@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amal • Profile</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<main class="container">
+  <section class="section card">
+    <div class="profile-top">
+      <div class="avatar"></div>
+      <div>
+        <div class="h2" style="margin:0; font-weight: 900;">Laila Mahmoud</div>
+        <div class="small muted" style="display:flex; gap:10px; align-items:center; margin-top: 4px;">
+          <span>📍 Gaza City</span>
+        </div>
+        <div class="small muted" style="margin-top: 10px; line-height:1.6;">
+          Resilience is our heritage. Sharing my journey of rebuilding and hope for a brighter future.
+        </div>
+      </div>
+
+      <div style="display:flex; gap: 10px; justify-content:flex-end; flex-wrap: wrap;">
+        <button class="btn" type="button" onclick="alert('Demo: edit profile');">✏️ Edit Profile</button>
+        <a class="btn secondary" href="login.html">Logout</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid-2">
+    <div class="card pad-lg" style="display:grid; gap: 12px;">
+      <div class="row">
+        <h2 class="section-title" style="margin:0;">Your Stories</h2>
+        <a class="btn" href="share.html">＋ New Story</a>
+      </div>
+
+      <div class="story-item">
+        <div>
+          <strong>Morning in Shuja'iyya</strong>
+          <div class="tiny muted" style="margin-top: 4px;">October 24, 2024</div>
+          <div class="small muted" style="margin-top: 8px;">A reflection on the early hours in my neighborhood, where the aroma of freshly baked bread...</div>
+          <div class="small" style="margin-top: 10px; display:flex; gap: 16px;">
+            <a href="#" onclick="alert('Demo: view'); return false;">👁️ View</a>
+            <a href="#" onclick="alert('Demo: edit'); return false;">✏️ Edit</a>
+          </div>
+        </div>
+        <div class="badge-status pending">Pending</div>
+      </div>
+
+      <div class="story-item">
+        <div>
+          <strong>The Olive Tree Garden</strong>
+          <div class="tiny muted" style="margin-top: 4px;">September 12, 2024</div>
+          <div class="small muted" style="margin-top: 8px;">Even in the hardest times, the old olive tree in our backyard remained a symbol...</div>
+          <div class="small" style="margin-top: 10px; display:flex; gap: 16px;">
+            <a href="#" onclick="alert('Demo: view'); return false;">👁️ View</a>
+            <a href="#" onclick="alert('Demo: edit'); return false;">✏️ Edit</a>
+          </div>
+        </div>
+        <div class="badge-status approved">Approved</div>
+      </div>
+
+      <div class="story-item">
+        <div>
+          <strong>Rebuilding the School Library</strong>
+          <div class="tiny muted" style="margin-top: 4px;">August 05, 2024</div>
+          <div class="small muted" style="margin-top: 8px;">A call to action for our local community to gather salvaged books and create a temporary...</div>
+          <div class="small" style="margin-top: 10px; display:flex; gap: 16px;">
+            <a href="#" onclick="alert('Demo: view'); return false;">👁️ View</a>
+            <a href="#" onclick="alert('Demo: edit'); return false;">✏️ Edit</a>
+          </div>
+        </div>
+        <div class="badge-status rejected">Rejected</div>
+      </div>
+    </div>
+
+    <aside style="display:grid; gap: 16px;">
+      <div class="card pad-lg">
+        <h2 class="section-title" style="margin-top:0;">Personal Information</h2>
+        <div class="small" style="display:grid; gap: 12px;">
+          <div>
+            <div class="tiny muted" style="letter-spacing:.14em;">FULL NAME</div>
+            <strong>Laila Mahmoud</strong>
+          </div>
+          <div>
+            <div class="tiny muted" style="letter-spacing:.14em;">EMAIL ADDRESS</div>
+            <strong>lailamahmoud@gmail.com</strong>
+          </div>
+          <div>
+            <div class="tiny muted" style="letter-spacing:.14em;">MEMBER SINCE</div>
+            <strong>January 2024</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="card pad-lg" style="background: rgba(47,226,67,.10); border-color: rgba(47,226,67,.18);">
+        <h2 class="section-title" style="margin-top:0;">Support Activity</h2>
+        <div class="kpi"><span class="small">Messages Sent</span><strong>24</strong></div>
+        <div class="kpi"><span class="small">Responses Received</span><strong>18</strong></div>
+        <div class="kpi"><span class="small">Last Reaction</span><strong class="small">2 hours ago</strong></div>
+        <button class="btn" type="button" style="width:100%; margin-top: 10px;" onclick="alert('Demo: support activity');">View Support Activity →</button>
+      </div>
+
+      <div class="card pad-lg">
+        <h2 class="section-title" style="margin-top:0;">Account Settings</h2>
+        <button class="btn secondary" type="button" style="width:100%;" onclick="alert('Demo: change password');">🔒 Change Password</button>
+        <button class="btn ghost" type="button" style="width:100%; margin-top: 10px; border-color: rgba(255,99,99,.35); color: rgba(255,99,99,.92);" onclick="alert('Demo: delete account');">🗑️ Delete Account</button>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

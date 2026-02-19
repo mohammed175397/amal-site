@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amal • Login</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<main class="auth">
+  <section class="auth-left">
+    <div class="auth-panel">
+      <a class="brand" href="login.html"><span class="mark">♡</span><span>Amal</span></a>
+      <h1 class="h2">Welcome back</h1>
+      <p class="small">Enter your details to continue your journey.</p>
+
+      <form id="loginForm" class="auth-form" autocomplete="on">
+        <div>
+          <label class="label" for="email">Email</label>
+          <input id="email" class="input" type="email" placeholder="name@example.com" required />
+        </div>
+
+        <div>
+          <label class="label" for="password">Password</label>
+          <input id="password" class="input" type="password" placeholder="••••••••" required />
+        </div>
+
+        <div class="row">
+          <span></span>
+          <a class="small" href="#" onclick="alert('Demo: password reset'); return false;" style="color: var(--primary-2); font-weight: 800;">Forgot Password?</a>
+        </div>
+
+        <button class="btn" type="submit">Login</button>
+
+        <div class="small muted" style="text-align:center; margin-top: 8px;">
+          Not a member? <a href="register.html" style="color: var(--primary-2); font-weight: 900;">Create an account</a>
+        </div>
+
+        <div class="tiny muted" style="text-align:center; margin-top: 18px; letter-spacing: .18em;">
+          SECURE ACCESS FOR GAZA
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="auth-right" style="background-image:url('assets/img/hero-login.jpg');">
+    <div class="auth-hero-overlay"></div>
+    <div class="auth-hero-text">
+      <div class="kicker">RENEWAL &amp; HOPE</div>
+      <div class="quote">“Every story of hope is a step toward renewal.”</div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amal • Home</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<main class="container">
+  <section class="section">
+    <div class="card pad-lg">
+      <div class="composer">
+        <div class="avatar"></div>
+        <div>
+          <textarea id="composerText" class="input" placeholder="Share your story or a message of hope..." aria-label="Story text"></textarea>
+          <div class="composer-actions">
+            <span class="pill" title="Add image">🖼️</span>
+            <span class="pill" title="Add emotion">🙂</span>
+            <span class="pill" title="Add location">📍</span>
+          </div>
+        </div>
+        <button id="createStoryBtn" class="btn" type="button">Create Story</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid-2">
+    <div id="feed" style="display:grid; gap: 16px;">
+      <!-- Post 1 -->
+      <article class="card post">
+        <div class="post-head">
+          <div class="post-user">
+            <div class="avatar"></div>
+            <div>
+              <div style="font-weight:900">Ahmed Khalil</div>
+              <div class="post-meta">2 hours ago • Gaza City</div>
+            </div>
+          </div>
+          <span class="tag">#GazaStories</span>
+        </div>
+
+        <div class="post-body">
+          <h3 class="post-title">Light Between the Ruins</h3>
+          <div class="small">
+            When the house collapsed, I thought everything was over. But among the rubble,
+            I found something stronger than fear: my family’s voices calling my name...
+          </div>
+        </div>
+
+        <div class="post-img">
+          <img src="assets/img/post-city.jpg" alt="Sunset city view" />
+        </div>
+
+        <div class="post-actions">
+          <button class="likeBtn" type="button">♡ <span>124</span> Supports</button>
+          <button class="commentToggle" type="button">💬 <span>18</span> Comments</button>
+        </div>
+
+        <div class="comment-box">
+          <div class="comment">
+            <div class="avatar"></div>
+            <div>
+              <div style="display:flex;justify-content:space-between;gap:10px;">
+                <strong>Sara M.</strong>
+                <span class="tiny muted">1 hour ago</span>
+              </div>
+              <div class="small" style="margin-top:4px;">
+                This is so inspiring. Sending love and strength to everyone in the neighborhood. We are with you!
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:12px;">
+            <input class="input commentInput" placeholder="Write a supportive comment..." />
+            <button class="btn secondary addCommentBtn" type="button" style="padding:10px 14px;">Send</button>
+          </div>
+          <div class="comments"></div>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="card post">
+        <div class="post-head">
+          <div class="post-user">
+            <div class="avatar"></div>
+            <div>
+              <div style="font-weight:900">Mariam S.</div>
+              <div class="post-meta">5 hours ago • Khan Yunis</div>
+            </div>
+          </div>
+          <span class="tag">#Hope</span>
+        </div>
+
+        <div class="post-body">
+          <h3 class="post-title">I Am Still Here</h3>
+          <div class="small">
+            Every time I hear the sound of an explosion, I count my breaths to make sure I am still here...
+          </div>
+        </div>
+
+        <div class="post-img">
+          <img src="assets/img/post-plant.jpg" alt="A plant by a window" />
+        </div>
+
+        <div class="post-actions">
+          <button class="likeBtn" type="button">♡ <span>342</span> Supports</button>
+          <button class="commentToggle" type="button">💬 <span>45</span> Comments</button>
+        </div>
+
+        <div class="comment-box">
+          <div class="row" style="margin-top:12px;">
+            <input class="input commentInput" placeholder="Write a supportive comment..." />
+            <button class="btn secondary addCommentBtn" type="button" style="padding:10px 14px;">Send</button>
+          </div>
+          <div class="comments"></div>
+        </div>
+      </article>
+    </div>
+
+    <aside style="display:grid; gap: 16px;">
+      <div class="card pad">
+        <div class="row">
+          <strong>Search stories</strong>
+          <span class="tag">⌘K</span>
+        </div>
+        <input class="input" placeholder="Search stories..." oninput="alert('Demo search only'); this.value='';" />
+      </div>
+
+      <div class="card pad">
+        <div class="row">
+          <strong>Popular Tags</strong>
+          <span class="muted tiny">Trending</span>
+        </div>
+        <div class="badges" style="margin-top: 12px;">
+          <span class="tag">#Rebuilding</span>
+          <span class="tag">#GazaStories</span>
+          <span class="tag">#Hope</span>
+          <span class="tag">#Community</span>
+          <span class="tag">#Healing</span>
+          <span class="tag">#Education</span>
+        </div>
+      </div>
+
+      <div class="card pad" style="background: rgba(47,226,67,.10); border-color: rgba(47,226,67,.18);">
+        <div class="row">
+          <strong>Community Guidelines</strong>
+          <span class="tag">✓ Verified</span>
+        </div>
+        <p class="small muted" style="margin: 10px 0 0; line-height:1.6;">
+          Amal is a space for healing and support. Please be respectful, use empathetic language,
+          and verify information before sharing. We are here to grow together.
+        </p>
+        <a class="btn secondary" href="support.html" style="margin-top: 12px;">Read full guidelines</a>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

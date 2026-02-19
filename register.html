@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amal • Create Account</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<main class="auth">
+  <section class="auth-left">
+    <div class="auth-panel">
+      <a class="brand" href="login.html"><span class="mark">♡</span><span>Amal</span></a>
+      <h1 class="h2">Create Account</h1>
+      <p class="small">Start your journey of storytelling and recovery.</p>
+
+      <div class="photo-chip">
+        <div class="photo-circle" role="button" tabindex="0" onclick="document.getElementById('photo').click()">
+          <img id="photoPreview" alt="" />
+          <span class="muted" style="font-weight:900;">👤</span>
+          <span class="photo-plus">+</span>
+        </div>
+        <div>
+          <div style="color: var(--primary-2); font-weight: 900;">Upload Photo</div>
+          <div class="tiny muted">(Optional)</div>
+        </div>
+      </div>
+
+      <form id="registerForm" class="auth-form" autocomplete="on">
+        <input id="photo" type="file" accept="image/*" hidden />
+
+        <div>
+          <label class="label" for="fullName">Full Name</label>
+          <input id="fullName" class="input" type="text" placeholder="Your name" required />
+        </div>
+
+        <div>
+          <label class="label" for="email2">Email Address</label>
+          <input id="email2" class="input" type="email" placeholder="name@example.com" required />
+        </div>
+
+        <div>
+          <label class="label" for="pass2">Password</label>
+          <input id="pass2" class="input" type="password" placeholder="Create a strong password" required />
+        </div>
+
+        <button class="btn" type="submit">Create Account</button>
+
+        <div class="small muted" style="text-align:center; margin-top: 8px;">
+          Already have an account? <a href="login.html" style="color: var(--primary-2); font-weight: 900;">Log in</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="auth-right" style="background-image:url('assets/img/hero-register.jpg');">
+    <div class="auth-hero-overlay"></div>
+    <div class="auth-hero-text">
+      <div class="quote" style="margin:0;">Join our community of hope</div>
+      <div class="small" style="margin-top: 12px; color: rgba(255,255,255,.82);">
+        Every story shared is a seed of hope for the future.
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

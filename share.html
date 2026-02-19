@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amal • Share Your Story</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<main class="container">
+  <section class="section" style="text-align:center; margin-top: 28px;">
+    <div class="h1" style="font-weight: 950;">📝 Share Your Story</div>
+    <p class="small muted" style="margin-top: 8px;">
+      Your story matters. Take your time and share what you feel comfortable sharing. This is a safe space for your journey.
+    </p>
+  </section>
+
+  <section class="card form-card">
+    <div style="display:grid; gap: 14px;">
+      <div>
+        <label class="label" for="title">Story Title</label>
+        <input id="title" class="input" placeholder="e.g., My Journey to Healing" />
+      </div>
+
+      <div>
+        <label class="label" for="content">Story Content</label>
+        <textarea id="content" class="input" style="min-height: 160px; resize: vertical;" placeholder="Tell us your story at your own pace..."></textarea>
+      </div>
+
+      <div>
+        <label class="label" for="loc">Location (Optional)</label>
+        <input id="loc" class="input" placeholder="Where did this take place?" />
+      </div>
+
+      <div>
+        <label class="label" for="images">Upload Images</label>
+        <div class="upload-zone">
+          <div class="pill" style="margin: 0 auto 10px;">☁️⬆️</div>
+          <div style="font-weight: 900;">Click or drag images to upload</div>
+          <div class="tiny muted" style="margin-top: 6px;">Images help tell the story, but they are not required.</div>
+          <input id="images" type="file" accept="image/*" multiple style="margin-top: 12px;" />
+          <div id="preview" class="preview"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="label">Author Privacy</div>
+        <div class="grid-2">
+          <button id="showName" class="btn secondary active" type="button">👤 Show my name</button>
+          <button id="anon" class="btn secondary" type="button">🙈 Post anonymously</button>
+        </div>
+
+        <div class="tile" style="margin-top: 12px; background: rgba(47,226,67,.10); border-color: rgba(47,226,67,.18);">
+          <strong>Safety Note:</strong>
+          <span class="small muted">Your story will be reviewed by our team before publishing to ensure safety and respect for everyone. We appreciate your patience as we build this safe community together.</span>
+        </div>
+      </div>
+
+      <hr style="border:0; border-top: 1px solid rgba(15,26,18,.10); margin: 10px 0;" />
+
+      <div class="row">
+        <a class="small muted" href="home.html">Cancel Submission</a>
+        <div style="display:flex; gap: 10px; flex-wrap: wrap;">
+          <button id="saveDraft" class="btn secondary" type="button">Save as Draft</button>
+          <button id="submitStory" class="btn" type="button">Submit Story</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
