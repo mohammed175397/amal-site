@@ -1,0 +1,50 @@
+.hero{
+  margin: 22px 0 26px;
+  border-radius: 34px;
+  overflow: hidden;
+  position: relative;
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.hero::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(47,226,67,.32), transparent 46%),
+              linear-gradient(135deg, rgba(0,0,0,.12), rgba(0,0,0,.42));
+}
+.hero .inner{
+  position: relative;
+  padding: 38px 18px;
+  width: min(820px, 100%);
+}
+.hero h1{ margin: 0; color: #fff; }
+.hero p{ margin: 10px 0 0; color: rgba(255,255,255,.84); }
+.hero .btn{ margin-top: 16px; }
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1.4fr .9fr;
+  gap: 18px;
+}
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.section{
+  margin: 18px 0;
+}
+.section-title{
+  font-weight: 900;
+  margin: 0 0 12px;
+}
+
+.pad{
+  padding: 18px;
+}
+.pad-lg{
+  padding: 24px;
+}

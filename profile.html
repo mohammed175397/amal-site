@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amal • Profile</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/popup.css" />
 </head>
 <body>
 
@@ -23,11 +24,12 @@
       </div>
 
       <div style="display:flex; gap: 10px; justify-content:flex-end; flex-wrap: wrap;">
-        <button class="btn" type="button" onclick="alert('Demo: edit profile');">✏️ Edit Profile</button>
+        <button class="btn" type="button" onclick="openProfile()">✏️ Edit Profile</button>
         <a class="btn secondary" href="login.html">Logout</a>
       </div>
     </div>
   </section>
+
 
   <section class="section grid-2">
     <div class="card pad-lg" style="display:grid; gap: 12px;">
@@ -46,7 +48,7 @@
             <a href="#" onclick="alert('Demo: edit'); return false;">✏️ Edit</a>
           </div>
         </div>
-        <div class="badge-status pending">Pending</div>
+        <div class="badge-status pending" style="height: 34px;">Pending</div>
       </div>
 
       <div class="story-item">
@@ -59,7 +61,7 @@
             <a href="#" onclick="alert('Demo: edit'); return false;">✏️ Edit</a>
           </div>
         </div>
-        <div class="badge-status approved">Approved</div>
+        <div class="badge-status approved" style="height: 34px;">Approved</div>
       </div>
 
       <div class="story-item">
@@ -72,7 +74,7 @@
             <a href="#" onclick="alert('Demo: edit'); return false;">✏️ Edit</a>
           </div>
         </div>
-        <div class="badge-status rejected">Rejected</div>
+        <div class="badge-status rejected" style="height: 34px;">Rejected</div>
       </div>
     </div>
 
@@ -113,5 +115,7 @@
 </main>
 
 <script src="assets/js/app.js"></script>
+<script src="assets/js/popup.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
