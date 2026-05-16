@@ -69,11 +69,25 @@
 
           <div class="footer-col">
             <h4>CONNECT</h4>
-            <a href="#" onclick="alert('Demo: Instagram'); return false;">Instagram</a>
-            <a href="#" onclick="alert('Demo: Facebook'); return false;">Facebook</a>
-            <a href="#" onclick="alert('Demo: X'); return false;">X / Twitter</a>
-            <div style="margin-top:12px;">
-              <a class="btn" href="support.html">Contact Support</a>
+            <div class='socail-icons'>
+              <a href="#" onclick="alert('Demo: Instagram'); return false;">
+              <img src='assets/icons/instgram.svg' />
+              </a>
+              <a href="#" onclick="alert('Demo: Facebook'); return false;">
+              <img src='assets/icons/facbook.svg' />
+              </a>
+              <a href="#" onclick="alert('Demo: X'); return false;">
+              <img src='assets/icons/x.svg' />
+              </a>
+            </div>
+            <div style="display:flex;  background-color: #1B431B;
+                gap: 5px;
+                color: white;
+                width: 192px;
+                padding: 13px 20px;
+                border-radius: 25px;">
+              <img src='assets/icons/icon.svg' />
+              <a class="btn-contact" href="support.html">Contact Support</a>
             </div>
           </div>
         </div>

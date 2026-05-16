@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<main class="container">
+<main class="container" id="modal-container">
   <section class="hero">
     <div class="inner">
       <h1 class="h1">You Are Not Alone</h1>
@@ -48,7 +48,7 @@
         <div class="info-card"> 
           <h3>Mental Health</h3>
           <p>Connect with trauma-informed counselors and specialists.</p>
-          <button class="btn secondary" type="button" onclick="alert('Demo: Mental Health resources');">View Resource</button>
+          <button class="btn secondary open-btn" data-file="dialogs/mentalDialog.html" data-target="myModal" type="button" >View Resource</button>
         </div>
       </div>
       <div class="tile-4">
@@ -58,7 +58,7 @@
         <div class="info-card">
           <h3>Healing Guides</h3>
           <p>Step-by-step toolkits for coping with loss and rebuilding.</p>
-          <button class="btn secondary" type="button" onclick="alert('Demo: Healing Guides');">View Resource</button>
+          <button class="btn secondary open-btn" data-file="dialogs/healingDialog.html" data-target="myModal" type="button">View Resource</button>
         </div>
       </div>
       <div class="tile-4">
@@ -68,7 +68,7 @@
         <div class="info-card">
           <h3>Emergency</h3>
           <p>Direct hotlines for medical and civil defense needs.</p>
-          <button class="btn secondary" type="button" onclick="alert('Demo: Emergency contacts');">View Resource</button>
+          <button class="btn secondary open-btn" data-file="dialogs/emergencyDialog.html" data-target="myModal" type="button" >View Resource</button>
         </div>
       </div>
       <div class="tile-4">
@@ -79,13 +79,14 @@
           <h3>Trusted NGOs</h3>
           <p>A curated list of verified aid
             organizations.</p>
-            <button class="btn secondary" type="button" onclick="alert('Demo: Emergency contacts');">View Resource</button>
+            <button class="btn secondary open-btn" data-file="dialogs/trustedDialog.html" data-target="myModal" type="button" >View Resource</button>
         </div>
       </div>
     </div>
   </section>
   <section class="section grid-2">
-    <div class="card pad-lg view">
+    <div class="card pad-lg view" style=" background: rgba(255,255,255,.65); border-radius: 22px;">
+      <img src="assets/icons/donate.svg" alt="">
       <h2 class="section-title">Financial Support Organizations</h2>
       <p class="small muted" style="margin-top:0; line-height:1.7;">
         Connecting familles with direct financial aid and rellef founds.
@@ -93,16 +94,17 @@
       <button class="btn" type="button" onclick="alert('Demo: donation flow');">View Organizations</button>
     </div>
 
-    <div class="card pad-lg view" style="border-style: dashed; background: rgba(255,255,255,.65);">
+    <div class="card pad-lg view" style=" background: rgba(255,255,255,.65); border-radius: 22px; ">
       <div class="row">
-        <h2 class="section-title" style="margin:0;">Food Aid Organizations</h2>
+        <img src="assets/icons/request.svg" alt="">
         <span class="tag">SECURE &amp; PRIVATE</span>
       </div>
+      <h2 class="section-title">Food Aid Organizations</h2>
       <p class="small muted" style="margin-top:10px; line-height:1.7;">
         Ensuring access to essential food supplies and nutritional
-assistance.
+        assistance.
       </p>
-      <button class="btn secondary" type="button" onclick="alert('Demo: request form');">Browse Resources</button>
+      <button class="btn secondary" style="border: 2px solid #63E963 ;" type="button" onclick="alert('Demo: request form');">Browse Resources</button>
     </div>
   </section>
 
@@ -117,5 +119,6 @@ assistance.
 </main>
 
 <script src="assets/js/app.js"></script>
+<script src="assets/js/dialog.js"></script>
 </body>
 </html>
