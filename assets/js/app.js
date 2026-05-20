@@ -255,50 +255,154 @@
     });
   }
 
-  function wireShare(){
-    if (pageName() !== 'share.html') return;
+  // function wireShare(){
+  //   if (pageName() !== 'share.html') return;
 
-    const file = document.querySelector('#images');
-    const preview = document.querySelector('#preview');
-    const anon = document.querySelector('#anon');
-    const showName = document.querySelector('#showName');
-    const submit = document.querySelector('#submitStory');
-    const save = document.querySelector('#saveDraft');
+  //   const file = document.querySelector('#images');
+  //   const preview = document.querySelector('#preview');
+  //   const anon = document.querySelector('#anon');
+  //   const showName = document.querySelector('#showName');
+  //   const submit = document.querySelector('#submitStory');
+  //   const save = document.querySelector('#saveDraft');
 
-    file?.addEventListener('change', ()=>{
-      preview.innerHTML = '';
-      const files = Array.from(file.files || []).slice(0, 6);
-      files.forEach(f=>{
-        const url = URL.createObjectURL(f);
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = '';
-        preview.appendChild(img);
-      });
-    });
+  //   file?.addEventListener('change', ()=>{
+  //     preview.innerHTML = '';
+  //     const files = Array.from(file.files || []).slice(0, 6);
+  //     files.forEach(f=>{
+  //       const url = URL.createObjectURL(f);
+  //       const img = document.createElement('img');
+  //       img.src = url;
+  //       img.alt = '';
+  //       preview.appendChild(img);
+  //     });
+  //   });
 
-    function setPrivacy(which){
-      if (which === 'anon'){
-        anon.classList.add('active');
-        showName.classList.remove('active');
-      } else {
-        showName.classList.add('active');
-        anon.classList.remove('active');
+  //   function setPrivacy(which){
+  //     if (which === 'anon'){
+  //       anon.classList.add('active');
+  //       showName.classList.remove('active');
+  //     } else {
+  //       showName.classList.add('active');
+  //       anon.classList.remove('active');
+  //     }
+  //   }
+  //   anon?.addEventListener('click', ()=>setPrivacy('anon'));
+  //   showName?.addEventListener('click', ()=>setPrivacy('name'));
+
+  //   save?.addEventListener('click', ()=>{
+  //     alert('Saved as draft (demo).');
+  //   });
+
+  //   submit?.addEventListener('click', ()=>{
+  //     // alert('Submitted for review (demo).');
+  //     // location.href = 'home.html';
+  //     const dialog = document.getElementById("successDialog");
+  //     dialog.showModal();
+
+  //   });
+  // }
+// function wireShare() {
+//   if (pageName() !== "share.html") return;
+
+//   const file = document.querySelector("#images");
+//   const preview = document.querySelector("#preview");
+//   const anon = document.querySelector("#anon");
+//   const showName = document.querySelector("#showName");
+//   const save = document.querySelector("#saveDraft");
+
+//   // كود معاينة الصور المرفوعة
+//   file?.addEventListener("change", () => {
+//     preview.innerHTML = "";
+//     const files = Array.from(file.files || []).slice(0, 6);
+//     files.forEach((f) => {
+//       const url = URL.createObjectURL(f);
+//       const img = document.createElement("img");
+//       img.src = url;
+//       img.alt = "";
+//       preview.appendChild(img);
+//     });
+//   });
+
+//   // كود أزرار الخصوصية (أونلاين / مجهول)
+//   function setPrivacy(which) {
+//     if (which === "anon") {
+//       anon.classList.add("active");
+//       showName.classList.remove("active");
+//     } else {
+//       showName.classList.add("active");
+//       anon.classList.remove("active");
+//     }
+//   }
+//   anon?.addEventListener("click", () => setPrivacy("anon"));
+//   showName?.addEventListener("click", () => setPrivacy("name"));
+
+//   // حفظ كمسودة
+//   save?.addEventListener("click", () => {
+//     alert("Saved as draft (demo).");
+//   });
+
+//   // ملاحظة: تم حذف حدث الـ submit القديم من هنا لمنع الخطأ والتضارب
+// }
+function wireShare() {
+  if (pageName() !== "share.html") return;
+
+  const file = document.querySelector("#images");
+  const preview = document.querySelector("#preview");
+  const anon = document.querySelector("#anon");
+  const showName = document.querySelector("#showName");
+  const save = document.querySelector("#saveDraft");
+
+  // ⬇️ تم نقل إمساك الفورم والـ submit هنا داخل الدالة ⬇️
+  const form = document.getElementById("storyForm");
+
+  form?.addEventListener("submit", function (event) {
+    event.preventDefault(); // منع الريفريش
+
+    Swal.fire({
+      icon: "success",
+      title: "Story Submitted!",
+      text: "Thank you for sharing your story. Our team will review it shortly to keep our community safe.",
+      confirmButtonText: "Great",
+      confirmButtonColor: "#2fe243",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        form.reset();
+        window.location.href = "home.html";
       }
+    });
+  });
+
+  // كود معاينة الصور (كما هو)
+  file?.addEventListener("change", () => {
+    preview.innerHTML = "";
+    const files = Array.from(file.files || []).slice(0, 6);
+    files.forEach((f) => {
+      const url = URL.createObjectURL(f);
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = "";
+      preview.appendChild(img);
+    });
+  });
+
+  // كود أزرار الخصوصية (كما هو)
+  function setPrivacy(which) {
+    if (which === "anon") {
+      anon.classList.add("active");
+      showName.classList.remove("active");
+    } else {
+      showName.classList.add("active");
+      anon.classList.remove("active");
     }
-    anon?.addEventListener('click', ()=>setPrivacy('anon'));
-    showName?.addEventListener('click', ()=>setPrivacy('name'));
-
-    save?.addEventListener('click', ()=>{
-      alert('Saved as draft (demo).');
-    });
-
-    submit?.addEventListener('click', ()=>{
-      alert('Submitted for review (demo).');
-      location.href = 'home.html';
-    });
   }
+  anon?.addEventListener("click", () => setPrivacy("anon"));
+  showName?.addEventListener("click", () => setPrivacy("name"));
 
+  // حفظ كمسودة (كما هو)
+  save?.addEventListener("click", () => {
+    alert("Saved as draft (demo).");
+  });
+}
   function escapeHtml(str){
     return String(str)
       .replaceAll('&','&amp;')

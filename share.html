@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amal • Share Your Story</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -17,15 +18,17 @@
   </section>
 
   <section class="card form-card">
-    <div style="display:grid; gap: 14px;">
+    <!-- تحويل الحاوية إلى وسم form وإعطائه id -->
+    <form id="storyForm" style="display:grid; gap: 14px;">
       <div>
         <label class="label" for="title">Story Title</label>
-        <input id="title" class="input" placeholder="e.g., My Journey to Healing" />
+        <!-- الـ required هنا هيشتغل تلقائياً بفضل الـ form -->
+        <input id="title" class="input" placeholder="e.g., My Journey to Healing" required />
       </div>
 
       <div>
         <label class="label" for="content">Story Content</label>
-        <textarea id="content" class="input" style="min-height: 160px; resize: vertical;" placeholder="Tell us your story at your own pace..."></textarea>
+        <textarea id="content" class="input" style="min-height: 160px; resize: vertical;" placeholder="Tell us your story at your own pace..." required></textarea>
       </div>
 
       <div>
@@ -63,13 +66,17 @@
         <a class="small muted" href="home.html">Cancel Submission</a>
         <div style="display:flex; gap: 10px; flex-wrap: wrap;">
           <button id="saveDraft" class="btn secondary" type="button">Save as Draft</button>
-          <button id="submitStory" class="btn" type="button">Submit Story</button>
+          <!-- تغيير الـ type هنا إلى submit ليقوم بفحص الحقول تلقائياً -->
+          <button id="submitStory" type="submit" class="btn">Submit Story</button>
         </div>
       </div>
-    </div>
+    </form>
   </section>
 </main>
 
 <script src="assets/js/app.js"></script>
+<!-- <script>
+  
+</script> -->
 </body>
 </html>

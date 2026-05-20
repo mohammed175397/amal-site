@@ -17,7 +17,7 @@ document.querySelectorAll(".open-btn").forEach((button) => {
         modal.showModal();
 
         // برمجة زر الإغلاق الموجود داخل الملف المحمل
-        const closeBtn = modal.querySelector(".close-btn");
+        const closeBtn = modal.querySelector(".close-btn-dialog");
         if (closeBtn) {
           closeBtn.onclick = () => modal.close();
         }

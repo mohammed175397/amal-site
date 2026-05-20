@@ -16,40 +16,41 @@ function openProfile() {
 
           <!-- الصورة الشخصية -->
           <div style="margin-bottom: 18px; text-align:center;">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Laila&backgroundColor=6aab8e"
+            <img id="mainProfilePic" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Laila&backgroundColor=6aab8e"
               style="width:88px; height:88px; border-radius:50%; border:3px solid #4CAF50; object-fit:cover; display:block; margin: 0 auto 8px;">
-                  <div class="photo-chip">
-        <div class="photo-circle" role="button" tabindex="0" onclick="document.getElementById('photo').click()">
-          <img id="photoPreview" alt="" />
-          <span class="muted" style="font-weight:900;">👤</span>
-          <span class="photo-plus">+</span>
-        </div>
-        <div>
-          <div style="color: var(--primary-2); font-weight: 900;">Upload Photo</div>
-          <div class="tiny muted">(Optional)</div>
-        </div>
-      </div>
+            <div class="photo-chip">
+              <div class="photo-circle" role="button" tabindex="0" onclick="document.getElementById('photo').click()">
+                <img id="photoPreview" alt="" style="width:100%; height:100%; border-radius:50%; object-fit:cover; display:none;" />
+                <span id="avatarIcon" class="muted" style="font-weight:900;">👤</span>
+                <span class="photo-plus">+</span>
+              </div>
+              <div>
+                <div style="color: var(--primary-2); font-weight: 900;">Upload Photo</div>
+                <div class="tiny muted">(Optional)</div>
+              </div>
+            </div>
+            <input type="file" id="photo" accept="image/*" style="display: none;">
           </div>
 
           <!-- الحقول -->
           <div class="swal-field-container">
             <label>Full Name</label>
-            <input id="swal-name" class="custom-input" value="Laila Mahmoud">
+            <input id="swal-name" class="custom-input" placeholder='mohammed adwan'>
           </div>
 
           <div class="swal-field-container">
             <label>Location</label>
-            <input id="swal-location" class="custom-input" value="Gaza City">
+            <input id="swal-location" class="custom-input" placeholder='gaza'>
           </div>
 
           <div class="swal-field-container">
             <label>Email Address</label>
-            <input id="swal-email" class="custom-input" value="lailamahmoud@gmail.com">
+            <input id="swal-email" class="custom-input" placeholder='example@gmail.com'>
           </div>
 
           <div class="swal-field-container">
             <label>Bio</label>
-            <textarea id="swal-bio" class="custom-input">Resilience is our heritage. Sharing my journey of rebuilding and hope for a brighter future.</textarea>
+            <textarea id="swal-bio" class="custom-input" placeholder='Resilience is our heritage. Sharing my journey of rebuilding and hope for a brighter future.'></textarea>
           </div>
         `,
     showCancelButton: true,
@@ -61,17 +62,62 @@ function openProfile() {
       cancelButton: "my-cancel-button",
     },
     buttonsStyling: false,
-    reverseButtons: false,
+
+    // هاد الجزء يتنفذ أول ما الـ الـ Pop-up يفتح مباشرة ليربط حقل الملفات
+    didOpen: () => {
+      const fileInput = document.getElementById("photo");
+      const photoPreview = document.getElementById("photoPreview");
+      const mainProfilePic = document.getElementById("mainProfilePic");
+      const avatarIcon = document.getElementById("avatarIcon");
+
+      fileInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function (event) {
+            // تحديث الصورة الكبيرة وصورة الدائرة الصغيرة بالصورة الجديدة
+            mainProfilePic.src = event.target.result;
+            photoPreview.src = event.target.result;
+
+            // إظهار عنصر المعاينة وإخفاء الأيقونة الافتراضية
+            photoPreview.style.display = "block";
+            avatarIcon.style.display = "none";
+
+            // حفظ الداتا (Base64) عشان نرسلها عند الحفظ
+            selectedImgData = event.target.result;
+          };
+
+          reader.readAsDataURL(file); // قراءة الملف كـ URL
+        }
+      });
+    },
+
     preConfirm: () => {
+      const name = document.getElementById("swal-name").value.trim();
+      const location = document.getElementById("swal-location").value.trim();
+      const email = document.getElementById("swal-email").value.trim();
+      const bio = document.getElementById("swal-bio").value.trim();
+
+      if (!name || !location || !email || !bio) {
+        Swal.showValidationMessage("Please fill out all required fields!");
+        return false;
+      }
+
+      // إرجاع البيانات مع الصورة الجديدة
       return {
-        name: document.getElementById("swal-name").value,
-        location: document.getElementById("swal-location").value,
-        email: document.getElementById("swal-email").value,
-        bio: document.getElementById("swal-bio").value,
+        name,
+        location,
+        email,
+        bio,
+        profileImage: selectedImgData, // راح تكون قيمتها null لو ما رفع صورة، أو نص Base64 لو رفع صورة
       };
     },
   }).then((result) => {
     if (result.isConfirmed) {
+      console.log("Data saved:", result.value);
+      // هنا يمكنك إرسال result.value.profileImage إلى السيرفر لتخزينها
+
       Swal.fire({
         icon: "success",
         title: "Saved!",
